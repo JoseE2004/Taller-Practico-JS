@@ -27,12 +27,30 @@ const alturaTriangulo = 5.5;
 const perimetroTriangulo = ladoTriangulo1 + ladoTriangulo2 + ladoTrianguloBase;
 const areaTriangulo = (ladoTrianguloBase * alturaTriangulo) / 2;
 
-function calcularTriangulo(lado1, lado2, lado3, base, altura){
+function calcularTriangulo(lado1, lado2, base, altura){
     return{
         perimetro: (lado1 + lado2 + base),
         area: (base * altura) / 2,
     }
 }
+
+//Forma para calcular la formula de un triagulo Isoseles
+function calcularAlturaTriangulo(lado1, base){
+    if (lado1 == base){
+        console.warn("Este no es un triangulo isoseles")
+    } else{
+        // h = raizcuadrada (lado**2 - (b**2)/4)
+        return Math.sqrt( (lado1 ** 2) - ( (base**2) ) /4);
+    }
+}
+
+console.log({
+    ladoTriangulo1,
+    ladoTriangulo1,
+    ladoTrianguloBase,
+    alturaTriangulo,
+    areaTriangulo,
+});
 console.groupEnd('Triangulo')
 
 
@@ -62,3 +80,4 @@ function calcularCirculo(radio){
     }
 }
 console.groupEnd('Circle')
+
